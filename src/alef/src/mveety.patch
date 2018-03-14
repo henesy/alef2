@@ -1,0 +1,29 @@
+diff -r abfe1e8080f9 port/main.c
+--- a/port/main.c	Tue Mar 13 21:32:57 2018 -0500
++++ b/port/main.c	Tue Mar 13 22:45:33 2018 -0400
+@@ -354,13 +354,14 @@
+ 	rexit();
+ }
+ 
++/*
+ void
+ setmalloctag(void*, ulong)
+ {
+ }
+ 
+ void
+-free(void *a)			/* Prevent redefinition of malloc */
++free(void *a)			/* Prevent redefinition of malloc 
+ {
+ 	USED(a);
+ }
+@@ -391,7 +392,7 @@
+ 	}
+ 	return 0;
+ }
+-
++*/
+ int
+ VBconv(Fmt *f)
+ {
+
