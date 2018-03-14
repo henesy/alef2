@@ -14,7 +14,7 @@ $LIB:V:	$OFILES			# force archive even when not needed
 	$CC $CFLAGS $stem.c
 
 %.$O:	%.l
-	$AC $ACFLAGS $stem.l
+	$ALEF $ALFLAGS $stem.l
 
 %.$O:	%.s
 	$AS $AFLAGS $stem.s

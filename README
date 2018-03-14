@@ -1,0 +1,10 @@
+Alef compiler port to 9front.
+
+Mk Notes:
+
+$ALEF is the alef compiler for a given architecture (8al, etc.)
+$ALFLAGS is the argument set for said compiler, some of the arguments for the 9front-era compilers aren't supported by the alef compilers at this time. Some /sys/src/cmd mkfiles confuse the alef compilers for this reason (mkmany). 
+Known to work:
+
+Nowhere!
+
