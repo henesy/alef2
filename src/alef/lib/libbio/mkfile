@@ -1,4 +1,4 @@
-</$objtype/mkfile
+</$objtype/mkfile.alef
 CPUS=mips sparc 386 power
 CFLAGS=-FVw
 ALFLAGS=-w
@@ -19,7 +19,7 @@ OFILES=\
 	bseek.$O\
 	bwrite.$O\
 
-</sys/src/cmd/mksyslib
+</sys/src/cmd/mksyslib.alef
 
 /68020/lib/alef/libbio.a:Q:	$OFILES
 	echo 'no alef compiler for 68020'
