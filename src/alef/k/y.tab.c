@@ -1,5 +1,5 @@
 
-#line	2	"/usr/seh/repos/alef2/port/parl.y"
+#line	2	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 #include <u.h>
 #include <libc.h>
 #include <bio.h>
@@ -7,7 +7,7 @@
 #define Extern extern
 #include "globl.h"
 
-#line	10	"/usr/seh/repos/alef2/port/parl.y"
+#line	10	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 typedef union 
 {
 	Node	*node;
@@ -103,7 +103,7 @@ YYSTYPE	yyval;
 #define YYEOFCODE 1
 #define YYERRCODE 2
 
-#line	1141	"/usr/seh/repos/alef2/port/parl.y"
+#line	1141	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 
 short	yyexca[] =
 {-1, 1,
@@ -841,40 +841,40 @@ yydefault:
 	switch(yym) {
 		
 case 1:
-#line	69	"/usr/seh/repos/alef2/port/parl.y"
+#line	69	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			polyasgn();
 			packdepend();
 			strop();
 		} break;
 case 2:
-#line	77	"/usr/seh/repos/alef2/port/parl.y"
+#line	77	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.node = nil; } break;
 case 3:
-#line	79	"/usr/seh/repos/alef2/port/parl.y"
+#line	79	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OLIST, yypt[-1].yyv.node, yypt[-0].yyv.node);
 			pushdcl(yypt[-0].yyv.node, Global);
 			gendata(yypt[-0].yyv.node);
 		} break;
 case 4:
-#line	87	"/usr/seh/repos/alef2/port/parl.y"
+#line	87	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = simpledecl(yypt[-2].yyv.type, yypt[-1].yyv.node);
 		} break;
 case 5:
-#line	91	"/usr/seh/repos/alef2/port/parl.y"
+#line	91	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			fundecl(yypt[-4].yyv.type, yypt[-3].yyv.node, yypt[-1].yyv.node);
 		} break;
 case 6:
-#line	95	"/usr/seh/repos/alef2/port/parl.y"
+#line	95	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			fungen(yypt[-0].yyv.node, yypt[-5].yyv.node);
 			yyval.node = yypt[-5].yyv.node->left;
 		} break;
 case 7:
-#line	100	"/usr/seh/repos/alef2/port/parl.y"
+#line	100	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			if(yypt[-4].yyv.type->class != External && yypt[-4].yyv.type->class != Global)
 				diag(yypt[-3].yyv.node, "%s illegal storage class for adt function",
@@ -884,33 +884,33 @@ case 7:
 			yypt[-1].yyv.node->init = nil;
 		} break;
 case 8:
-#line	109	"/usr/seh/repos/alef2/port/parl.y"
+#line	109	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			fungen(yypt[-0].yyv.node, yypt[-5].yyv.node);
 			adtbfun = nil;
 			yyval.node = yypt[-5].yyv.node->left;
 		} break;
 case 9:
-#line	115	"/usr/seh/repos/alef2/port/parl.y"
+#line	115	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			applytype(yypt[-5].yyv.type, yypt[-4].yyv.node);
 			funproto(yypt[-4].yyv.node, yypt[-2].yyv.node);
 			yyval.node = yypt[-4].yyv.node;
 		} break;
 case 10:
-#line	121	"/usr/seh/repos/alef2/port/parl.y"
+#line	121	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			if(yypt[-1].yyv.node)
 				buildtype(yypt[-1].yyv.node);
 		} break;
 case 11:
-#line	126	"/usr/seh/repos/alef2/port/parl.y"
+#line	126	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			newtype(yypt[-3].yyv.type, yypt[-2].yyv.node, yypt[-1].yyv.node);
 			yyval.node = nil;
 		} break;
 case 12:
-#line	131	"/usr/seh/repos/alef2/port/parl.y"
+#line	131	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yypt[-1].yyv.sym->lexval = Ttypename;
 			yypt[-1].yyv.sym->ltype = at(TPOLY, nil);
@@ -918,57 +918,57 @@ case 12:
 			yyval.node = nil;
 		} break;
 case 13:
-#line	140	"/usr/seh/repos/alef2/port/parl.y"
+#line	140	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.node = nil; } break;
 case 14:
-#line	142	"/usr/seh/repos/alef2/port/parl.y"
+#line	142	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.node = yypt[-1].yyv.node; } break;
 case 16:
-#line	147	"/usr/seh/repos/alef2/port/parl.y"
+#line	147	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.type = nil; } break;
 case 17:
-#line	149	"/usr/seh/repos/alef2/port/parl.y"
+#line	149	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.type = nil; } break;
 case 18:
-#line	151	"/usr/seh/repos/alef2/port/parl.y"
+#line	151	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.type = nil; } break;
 case 19:
-#line	155	"/usr/seh/repos/alef2/port/parl.y"
+#line	155	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yypt[-0].yyv.node->init = adtfunc(yypt[-2].yyv.ltype, yypt[-0].yyv.node);
 			yyval.node = yypt[-0].yyv.node;
 		} break;
 case 20:
-#line	160	"/usr/seh/repos/alef2/port/parl.y"
+#line	160	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yypt[-0].yyv.node->init = adtfunc(yypt[-2].yyv.ltype, yypt[-0].yyv.node);
 			yypt[-0].yyv.node->right = yypt[-3].yyv.node;
 			yyval.node = yypt[-0].yyv.node;
 		} break;
 case 21:
-#line	168	"/usr/seh/repos/alef2/port/parl.y"
+#line	168	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			if(yypt[-0].yyv.node)
 				yypt[-0].yyv.node->sym->lexval = Ttypename;
 		} break;
 case 22:
-#line	173	"/usr/seh/repos/alef2/port/parl.y"
+#line	173	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OAGDECL, an(OLIST, yypt[-5].yyv.node, yypt[-0].yyv.node), yypt[-2].yyv.node);
 		} break;
 case 23:
-#line	177	"/usr/seh/repos/alef2/port/parl.y"
+#line	177	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			if(yypt[-0].yyv.node)
 				yypt[-0].yyv.node->sym->lexval = Ttypename; 
 		} break;
 case 24:
-#line	182	"/usr/seh/repos/alef2/port/parl.y"
+#line	182	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OUNDECL, an(OLIST, yypt[-5].yyv.node, yypt[-0].yyv.node), yypt[-2].yyv.node);
 		} break;
 case 25:
-#line	186	"/usr/seh/repos/alef2/port/parl.y"
+#line	186	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			if(yypt[-1].yyv.node) {
 				yypt[-1].yyv.node->sym->lexval = Ttypename;
@@ -979,7 +979,7 @@ case 25:
 				diag(nil, "adt decl needs type name");
 		} break;
 case 26:
-#line	196	"/usr/seh/repos/alef2/port/parl.y"
+#line	196	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			if(yypt[-6].yyv.node) {
 				buildadt = yypt[-6].yyv.node->right;
@@ -991,7 +991,7 @@ case 26:
 				yyval.node = nil;
 		} break;
 case 27:
-#line	207	"/usr/seh/repos/alef2/port/parl.y"
+#line	207	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			setbase = 0;
 			if(yypt[-0].yyv.node) {
@@ -1000,34 +1000,34 @@ case 27:
 			}
 		} break;
 case 28:
-#line	215	"/usr/seh/repos/alef2/port/parl.y"
+#line	215	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OSETDECL, nil, nil);
 		} break;
 case 29:
-#line	221	"/usr/seh/repos/alef2/port/parl.y"
+#line	221	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.node = nil; } break;
 case 31:
-#line	224	"/usr/seh/repos/alef2/port/parl.y"
+#line	224	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(ONAME, nil, nil);
 			yyval.node->sym = yypt[-0].yyv.ltype.s;
 		} break;
 case 32:
-#line	231	"/usr/seh/repos/alef2/port/parl.y"
+#line	231	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.node = nil; } break;
 case 33:
-#line	233	"/usr/seh/repos/alef2/port/parl.y"
+#line	233	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = yypt[-1].yyv.node;
 		} break;
 case 34:
-#line	239	"/usr/seh/repos/alef2/port/parl.y"
+#line	239	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			polytyp(yypt[-0].yyv.node);
 		} break;
 case 35:
-#line	243	"/usr/seh/repos/alef2/port/parl.y"
+#line	243	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(ONAME, nil, nil);
 			if(yypt[-0].yyv.ltype.t->type != TPOLY) {
@@ -1041,53 +1041,53 @@ case 35:
 			}
 		} break;
 case 36:
-#line	256	"/usr/seh/repos/alef2/port/parl.y"
+#line	256	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yypt[-2].yyv.node->left = yypt[-0].yyv.node;
 			yyval.node = yypt[-2].yyv.node;
 		} break;
 case 38:
-#line	264	"/usr/seh/repos/alef2/port/parl.y"
+#line	264	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OLIST, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 39:
-#line	270	"/usr/seh/repos/alef2/port/parl.y"
+#line	270	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.node = nil; } break;
 case 40:
-#line	272	"/usr/seh/repos/alef2/port/parl.y"
+#line	272	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yypt[-0].yyv.node->sym->lexval = Tsname;
 			coverset(yypt[-0].yyv.node);
 		} break;
 case 41:
-#line	277	"/usr/seh/repos/alef2/port/parl.y"
+#line	277	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yypt[-2].yyv.node->sym->lexval = Tsname;
 			yypt[-2].yyv.node->left = yypt[-0].yyv.node;
 			coverset(yypt[-2].yyv.node);
 		} break;
 case 42:
-#line	285	"/usr/seh/repos/alef2/port/parl.y"
+#line	285	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(ONAME, nil, nil);
 			yyval.node->sym = yypt[-0].yyv.sym;
 		} break;
 case 44:
-#line	293	"/usr/seh/repos/alef2/port/parl.y"
+#line	293	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OLIST, yypt[-1].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 45:
-#line	299	"/usr/seh/repos/alef2/port/parl.y"
+#line	299	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.node = nil; } break;
 case 47:
-#line	302	"/usr/seh/repos/alef2/port/parl.y"
+#line	302	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OLIST, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 48:
-#line	308	"/usr/seh/repos/alef2/port/parl.y"
+#line	308	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node->init = yypt[-0].yyv.node;
 			typechk(yypt[-0].yyv.node, 0);
@@ -1095,121 +1095,121 @@ case 48:
 			yyval.node = yypt[-1].yyv.node;
 		} break;
 case 49:
-#line	317	"/usr/seh/repos/alef2/port/parl.y"
+#line	317	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.node = nil; } break;
 case 50:
-#line	319	"/usr/seh/repos/alef2/port/parl.y"
+#line	319	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = yypt[-0].yyv.node;
 		} break;
 case 52:
-#line	326	"/usr/seh/repos/alef2/port/parl.y"
+#line	326	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OINDEX, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 53:
-#line	330	"/usr/seh/repos/alef2/port/parl.y"
+#line	330	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OINDEX, yypt[-0].yyv.node, nil);
 			yyval.node->sym = yypt[-1].yyv.sym;
 		} break;
 case 54:
-#line	335	"/usr/seh/repos/alef2/port/parl.y"
+#line	335	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OILIST, yypt[-1].yyv.node, nil);
 		} break;
 case 55:
-#line	339	"/usr/seh/repos/alef2/port/parl.y"
+#line	339	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OINDEX, yypt[-4].yyv.node, an(OILIST, yypt[-1].yyv.node, nil));
 		} break;
 case 56:
-#line	343	"/usr/seh/repos/alef2/port/parl.y"
+#line	343	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OLIST, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 57:
-#line	349	"/usr/seh/repos/alef2/port/parl.y"
+#line	349	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(ONAME, yypt[-0].yyv.node, nil);
 			yyval.node->sym = yypt[-1].yyv.sym;
 		} break;
 case 58:
-#line	354	"/usr/seh/repos/alef2/port/parl.y"
+#line	354	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(ONAME, yypt[-0].yyv.node, yypt[-2].yyv.node);
 			yyval.node->sym = yypt[-1].yyv.sym;
 		} break;
 case 59:
-#line	359	"/usr/seh/repos/alef2/port/parl.y"
+#line	359	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OFUNC, an(OLIST, yypt[-4].yyv.node, yypt[-6].yyv.node), nil);
 			yyval.node->sym = yypt[-5].yyv.sym;
 			yyval.node->proto = yypt[-1].yyv.node;
 		} break;
 case 60:
-#line	365	"/usr/seh/repos/alef2/port/parl.y"
+#line	365	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OFUNC, an(OLIST, yypt[-4].yyv.node, yypt[-6].yyv.node), yypt[-8].yyv.node);
 			yyval.node->sym = yypt[-5].yyv.sym;
 			yyval.node->proto = yypt[-1].yyv.node;
 		} break;
 case 61:
-#line	373	"/usr/seh/repos/alef2/port/parl.y"
+#line	373	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.node = nil; } break;
 case 62:
-#line	375	"/usr/seh/repos/alef2/port/parl.y"
+#line	375	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OARRAY, yypt[-1].yyv.node, yypt[-3].yyv.node);
 			typechk(yypt[-1].yyv.node, 0);
 			rewrite(yypt[-1].yyv.node);
 		} break;
 case 63:
-#line	383	"/usr/seh/repos/alef2/port/parl.y"
+#line	383	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OIND, nil, nil);
 		} break;
 case 64:
-#line	387	"/usr/seh/repos/alef2/port/parl.y"
+#line	387	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OIND, yypt[-1].yyv.node, nil);
 		} break;
 case 65:
-#line	394	"/usr/seh/repos/alef2/port/parl.y"
+#line	394	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OPROTO, nil, nil);
 			yyval.node->t = builtype[TVOID];
 		} break;
 case 67:
-#line	400	"/usr/seh/repos/alef2/port/parl.y"
+#line	400	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OADTARG, nil, nil);
 			yyval.node->t = at(TIND, yypt[-0].yyv.type);
 		} break;
 case 68:
-#line	405	"/usr/seh/repos/alef2/port/parl.y"
+#line	405	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OADTARG, nil, nil);
 			yyval.node->t = yypt[-0].yyv.type;
 		} break;
 case 69:
-#line	410	"/usr/seh/repos/alef2/port/parl.y"
+#line	410	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OLIST, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 70:
-#line	416	"/usr/seh/repos/alef2/port/parl.y"
+#line	416	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OPROTO, nil, nil);
 			yyval.node->t = yypt[-0].yyv.type;
 		} break;
 case 71:
-#line	421	"/usr/seh/repos/alef2/port/parl.y"
+#line	421	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = argproto(yypt[-2].yyv.type, yypt[-1].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 72:
-#line	425	"/usr/seh/repos/alef2/port/parl.y"
+#line	425	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node= an(OPROTO, nil, nil);
 			yyval.node->t = yypt[-6].yyv.type;
@@ -1218,7 +1218,7 @@ case 72:
 			yyval.node->proto = yypt[-1].yyv.node;
 		} break;
 case 73:
-#line	433	"/usr/seh/repos/alef2/port/parl.y"
+#line	433	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node= an(OPROTO, nil, nil);
 			yyval.node->t = mkcast(yypt[-7].yyv.type, yypt[-6].yyv.node);
@@ -1227,12 +1227,12 @@ case 73:
 			yyval.node->proto = yypt[-1].yyv.node;
 		} break;
 case 74:
-#line	441	"/usr/seh/repos/alef2/port/parl.y"
+#line	441	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = yypt[-0].yyv.node;
 		} break;
 case 75:
-#line	445	"/usr/seh/repos/alef2/port/parl.y"
+#line	445	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			applytype(yypt[-1].yyv.type, yypt[-0].yyv.node);
 			yyval.node = yypt[-0].yyv.node;
@@ -1242,18 +1242,18 @@ case 75:
 			}
 		} break;
 case 76:
-#line	454	"/usr/seh/repos/alef2/port/parl.y"
+#line	454	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OVARARG, nil, nil);
 		} break;
 case 77:
-#line	460	"/usr/seh/repos/alef2/port/parl.y"
+#line	460	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OPROTO, nil, nil);
 			yyval.node->t = yypt[-0].yyv.type;
 		} break;
 case 78:
-#line	465	"/usr/seh/repos/alef2/port/parl.y"
+#line	465	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node= an(OPROTO, nil, nil);
 			yyval.node->t = yypt[-6].yyv.type;
@@ -1262,7 +1262,7 @@ case 78:
 			yyval.node->proto = yypt[-1].yyv.node;
 		} break;
 case 79:
-#line	473	"/usr/seh/repos/alef2/port/parl.y"
+#line	473	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			applytype(yypt[-1].yyv.type, yypt[-0].yyv.node);
 			yyval.node = yypt[-0].yyv.node;
@@ -1272,451 +1272,451 @@ case 79:
 			}
 		} break;
 case 80:
-#line	484	"/usr/seh/repos/alef2/port/parl.y"
+#line	484	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.node = nil; } break;
 case 81:
-#line	486	"/usr/seh/repos/alef2/port/parl.y"
+#line	486	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OLIST, yypt[-1].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 82:
-#line	492	"/usr/seh/repos/alef2/port/parl.y"
+#line	492	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			applytype(yypt[-2].yyv.type, yypt[-1].yyv.node);
 			pushdcl(yypt[-1].yyv.node, Automatic);
 			yyval.node = yypt[-1].yyv.node;
 		} break;
 case 83:
-#line	498	"/usr/seh/repos/alef2/port/parl.y"
+#line	498	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			applytype(yypt[-2].yyv.type, yypt[-1].yyv.node);
 			pushdcl(yypt[-1].yyv.node, Automatic);
 			yyval.node = yypt[-1].yyv.node;
 		} break;
 case 84:
-#line	506	"/usr/seh/repos/alef2/port/parl.y"
+#line	506	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { enterblock(); } break;
 case 85:
-#line	508	"/usr/seh/repos/alef2/port/parl.y"
+#line	508	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { scopeis(Automatic); } break;
 case 86:
-#line	510	"/usr/seh/repos/alef2/port/parl.y"
+#line	510	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { leaveblock(); } break;
 case 87:
-#line	512	"/usr/seh/repos/alef2/port/parl.y"
+#line	512	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.node = an(OBLOCK, yypt[-2].yyv.node, nil); } break;
 case 88:
-#line	514	"/usr/seh/repos/alef2/port/parl.y"
+#line	514	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { enterblock(); } break;
 case 89:
-#line	516	"/usr/seh/repos/alef2/port/parl.y"
+#line	516	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { scopeis(Automatic); } break;
 case 90:
-#line	518	"/usr/seh/repos/alef2/port/parl.y"
+#line	518	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { leaveblock(); } break;
 case 91:
-#line	520	"/usr/seh/repos/alef2/port/parl.y"
+#line	520	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.node = an(OLBLOCK, yypt[-2].yyv.node, nil); } break;
 case 92:
-#line	524	"/usr/seh/repos/alef2/port/parl.y"
+#line	524	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.node = nil; } break;
 case 93:
-#line	526	"/usr/seh/repos/alef2/port/parl.y"
+#line	526	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OLIST, yypt[-1].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 94:
-#line	532	"/usr/seh/repos/alef2/port/parl.y"
+#line	532	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = yypt[-1].yyv.node;
 		} break;
 case 95:
-#line	536	"/usr/seh/repos/alef2/port/parl.y"
+#line	536	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OLBLOCK, yypt[-1].yyv.node, nil);
 		} break;
 case 96:
-#line	542	"/usr/seh/repos/alef2/port/parl.y"
+#line	542	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.node = nil; } break;
 case 97:
-#line	544	"/usr/seh/repos/alef2/port/parl.y"
+#line	544	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OLIST, yypt[-1].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 98:
-#line	549	"/usr/seh/repos/alef2/port/parl.y"
+#line	549	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { settype(yypt[-0].yyv.type); } break;
 case 99:
-#line	550	"/usr/seh/repos/alef2/port/parl.y"
+#line	550	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			unsettype();
 			yyval.node = an(OCASE, con(typesig(yypt[-3].yyv.type)), yypt[-0].yyv.node);
 		} break;
 case 100:
-#line	555	"/usr/seh/repos/alef2/port/parl.y"
+#line	555	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(ODEFAULT, nil, yypt[-0].yyv.node);
 		} break;
 case 101:
-#line	561	"/usr/seh/repos/alef2/port/parl.y"
+#line	561	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = yypt[-1].yyv.node;
 		} break;
 case 102:
-#line	565	"/usr/seh/repos/alef2/port/parl.y"
+#line	565	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OLBLOCK, yypt[-1].yyv.node, nil);
 		} break;
 case 103:
-#line	571	"/usr/seh/repos/alef2/port/parl.y"
+#line	571	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.node = nil; } break;
 case 104:
-#line	573	"/usr/seh/repos/alef2/port/parl.y"
+#line	573	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OLIST, yypt[-1].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 105:
-#line	579	"/usr/seh/repos/alef2/port/parl.y"
+#line	579	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OCASE, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 106:
-#line	583	"/usr/seh/repos/alef2/port/parl.y"
+#line	583	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(ODEFAULT, nil, yypt[-0].yyv.node);
 		} break;
 case 108:
-#line	590	"/usr/seh/repos/alef2/port/parl.y"
+#line	590	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OLABEL, yypt[-0].yyv.node, nil);
 			yyval.node->sym = yypt[-1].yyv.sym;
 		} break;
 case 109:
-#line	597	"/usr/seh/repos/alef2/port/parl.y"
+#line	597	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.node = nil; } break;
 case 110:
-#line	599	"/usr/seh/repos/alef2/port/parl.y"
+#line	599	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OLABEL, nil, nil);
 			yyval.node->sym = yypt[-0].yyv.sym;
 		} break;
 case 112:
-#line	607	"/usr/seh/repos/alef2/port/parl.y"
+#line	607	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OLIST, an(OLABEL, nil, nil), yypt[-0].yyv.node);
 			yyval.node->left->sym = yypt[-2].yyv.sym;
 		} break;
 case 113:
-#line	614	"/usr/seh/repos/alef2/port/parl.y"
+#line	614	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.node = nil; } break;
 case 114:
-#line	616	"/usr/seh/repos/alef2/port/parl.y"
+#line	616	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = strnode(yypt[-0].yyv.string, 0);
 		} break;
 case 115:
-#line	622	"/usr/seh/repos/alef2/port/parl.y"
+#line	622	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.node = nil; } break;
 case 118:
-#line	626	"/usr/seh/repos/alef2/port/parl.y"
+#line	626	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OCHECK, yypt[-2].yyv.node, yypt[-1].yyv.node);
 		} break;
 case 119:
-#line	630	"/usr/seh/repos/alef2/port/parl.y"
+#line	630	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OALLOC, yypt[-1].yyv.node, nil);
 		} break;
 case 120:
-#line	634	"/usr/seh/repos/alef2/port/parl.y"
+#line	634	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OUALLOC, yypt[-1].yyv.node, nil);
 		} break;
 case 121:
-#line	638	"/usr/seh/repos/alef2/port/parl.y"
+#line	638	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(ORESCUE, yypt[-0].yyv.node, nil);
 		} break;
 case 122:
-#line	642	"/usr/seh/repos/alef2/port/parl.y"
+#line	642	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(ORAISE, yypt[-1].yyv.node, nil);
 		} break;
 case 123:
-#line	646	"/usr/seh/repos/alef2/port/parl.y"
+#line	646	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OGOTO, nil, nil);
 			yyval.node->sym = yypt[-1].yyv.sym;
 		} break;
 case 124:
-#line	651	"/usr/seh/repos/alef2/port/parl.y"
+#line	651	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OPROCESS, yypt[-1].yyv.node, nil);
 		} break;
 case 125:
-#line	655	"/usr/seh/repos/alef2/port/parl.y"
+#line	655	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OTASK, yypt[-1].yyv.node, nil);
 		} break;
 case 126:
-#line	659	"/usr/seh/repos/alef2/port/parl.y"
+#line	659	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OBECOME, yypt[-1].yyv.node, nil);
 		} break;
 case 127:
-#line	663	"/usr/seh/repos/alef2/port/parl.y"
+#line	663	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OSELECT, yypt[-0].yyv.node, nil);
 		} break;
 case 128:
-#line	667	"/usr/seh/repos/alef2/port/parl.y"
+#line	667	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(ORET, yypt[-1].yyv.node, nil);
 		} break;
 case 129:
-#line	671	"/usr/seh/repos/alef2/port/parl.y"
+#line	671	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OFOR, an(OLIST, yypt[-6].yyv.node, an(OLIST, yypt[-4].yyv.node, yypt[-2].yyv.node)), yypt[-0].yyv.node);
 		} break;
 case 130:
-#line	675	"/usr/seh/repos/alef2/port/parl.y"
+#line	675	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OWHILE, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 131:
-#line	679	"/usr/seh/repos/alef2/port/parl.y"
+#line	679	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(ODWHILE, yypt[-1].yyv.node, yypt[-4].yyv.node);
 		} break;
 case 132:
-#line	683	"/usr/seh/repos/alef2/port/parl.y"
+#line	683	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OIF, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 133:
-#line	687	"/usr/seh/repos/alef2/port/parl.y"
+#line	687	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OIF, yypt[-4].yyv.node, an(OELSE, yypt[-2].yyv.node, yypt[-0].yyv.node));
 		} break;
 case 134:
-#line	691	"/usr/seh/repos/alef2/port/parl.y"
+#line	691	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OPAR, yypt[-0].yyv.node, nil);
 		} break;
 case 135:
-#line	695	"/usr/seh/repos/alef2/port/parl.y"
+#line	695	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OSWITCH, yypt[-1].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 136:
-#line	699	"/usr/seh/repos/alef2/port/parl.y"
+#line	699	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yypt[-0].yyv.node->link = swstack;
 			swstack = yypt[-0].yyv.node;
 		} break;
 case 137:
-#line	704	"/usr/seh/repos/alef2/port/parl.y"
+#line	704	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			swstack = yypt[-2].yyv.node->link;
 			yyval.node = an(OSWITCH, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 138:
-#line	709	"/usr/seh/repos/alef2/port/parl.y"
+#line	709	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OCONT, nil, nil);
 			yyval.node->ival = yypt[-1].yyv.ival;
 		} break;
 case 139:
-#line	714	"/usr/seh/repos/alef2/port/parl.y"
+#line	714	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OBREAK, nil, nil);
 			yyval.node->ival = yypt[-1].yyv.ival;
 		} break;
 case 140:
-#line	721	"/usr/seh/repos/alef2/port/parl.y"
+#line	721	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.ival = 1; } break;
 case 142:
-#line	726	"/usr/seh/repos/alef2/port/parl.y"
+#line	726	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.node = nil; } break;
 case 145:
-#line	732	"/usr/seh/repos/alef2/port/parl.y"
+#line	732	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OMUL, yypt[-2].yyv.node, yypt[-0].yyv.node); 
 		} break;
 case 146:
-#line	736	"/usr/seh/repos/alef2/port/parl.y"
+#line	736	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(ODIV, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 147:
-#line	740	"/usr/seh/repos/alef2/port/parl.y"
+#line	740	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OMOD, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 148:
-#line	744	"/usr/seh/repos/alef2/port/parl.y"
+#line	744	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OADD, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 149:
-#line	748	"/usr/seh/repos/alef2/port/parl.y"
+#line	748	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OSUB, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 150:
-#line	752	"/usr/seh/repos/alef2/port/parl.y"
+#line	752	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(ORSH, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 151:
-#line	756	"/usr/seh/repos/alef2/port/parl.y"
+#line	756	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OLSH, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 152:
-#line	760	"/usr/seh/repos/alef2/port/parl.y"
+#line	760	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OLT, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 153:
-#line	764	"/usr/seh/repos/alef2/port/parl.y"
+#line	764	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OGT, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 154:
-#line	768	"/usr/seh/repos/alef2/port/parl.y"
+#line	768	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OLEQ, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 155:
-#line	772	"/usr/seh/repos/alef2/port/parl.y"
+#line	772	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OGEQ, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 156:
-#line	776	"/usr/seh/repos/alef2/port/parl.y"
+#line	776	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OEQ, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 157:
-#line	780	"/usr/seh/repos/alef2/port/parl.y"
+#line	780	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(ONEQ, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 158:
-#line	784	"/usr/seh/repos/alef2/port/parl.y"
+#line	784	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OLAND, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 159:
-#line	788	"/usr/seh/repos/alef2/port/parl.y"
+#line	788	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OXOR, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 160:
-#line	792	"/usr/seh/repos/alef2/port/parl.y"
+#line	792	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OLOR, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 161:
-#line	796	"/usr/seh/repos/alef2/port/parl.y"
+#line	796	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OCAND, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 162:
-#line	800	"/usr/seh/repos/alef2/port/parl.y"
+#line	800	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OCOR, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 163:
-#line	804	"/usr/seh/repos/alef2/port/parl.y"
+#line	804	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OASGN, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 164:
-#line	808	"/usr/seh/repos/alef2/port/parl.y"
+#line	808	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OVASGN, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 165:
-#line	812	"/usr/seh/repos/alef2/port/parl.y"
+#line	812	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OASGN, an(OSEND, yypt[-3].yyv.node, nil), yypt[-0].yyv.node);
 		} break;
 case 166:
-#line	816	"/usr/seh/repos/alef2/port/parl.y"
+#line	816	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OADDEQ, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 167:
-#line	820	"/usr/seh/repos/alef2/port/parl.y"
+#line	820	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OSUBEQ, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 168:
-#line	824	"/usr/seh/repos/alef2/port/parl.y"
+#line	824	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OMULEQ, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 169:
-#line	828	"/usr/seh/repos/alef2/port/parl.y"
+#line	828	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(ODIVEQ, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 170:
-#line	832	"/usr/seh/repos/alef2/port/parl.y"
+#line	832	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OMODEQ, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 171:
-#line	836	"/usr/seh/repos/alef2/port/parl.y"
+#line	836	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(ORSHEQ, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 172:
-#line	840	"/usr/seh/repos/alef2/port/parl.y"
+#line	840	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OLSHEQ, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 173:
-#line	844	"/usr/seh/repos/alef2/port/parl.y"
+#line	844	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OANDEQ, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 174:
-#line	848	"/usr/seh/repos/alef2/port/parl.y"
+#line	848	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OOREQ, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 175:
-#line	852	"/usr/seh/repos/alef2/port/parl.y"
+#line	852	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OXOREQ, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 176:
-#line	856	"/usr/seh/repos/alef2/port/parl.y"
+#line	856	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OITER, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 178:
-#line	863	"/usr/seh/repos/alef2/port/parl.y"
+#line	863	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OCONV, yypt[-0].yyv.node, nil);
 			yyval.node->t = yypt[-2].yyv.type;
 		} break;
 case 179:
-#line	868	"/usr/seh/repos/alef2/port/parl.y"
+#line	868	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OALLOC, yypt[-0].yyv.node, nil);
 			yyval.node->t = yypt[-2].yyv.type;
 		} break;
 case 181:
-#line	876	"/usr/seh/repos/alef2/port/parl.y"
+#line	876	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.type = mkcast(yypt[-1].yyv.type, yypt[-0].yyv.node);
 		} break;
 case 182:
-#line	880	"/usr/seh/repos/alef2/port/parl.y"
+#line	880	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.type = mkcast(at(TFUNC, yypt[-6].yyv.type), yypt[-4].yyv.node);
 			yyval.type = yyval.type->next;
@@ -1724,86 +1724,86 @@ case 182:
 			yyval.type = at(TIND, yyval.type);
 		} break;
 case 183:
-#line	887	"/usr/seh/repos/alef2/port/parl.y"
+#line	887	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.type = yypt[-0].yyv.type;
 		} break;
 case 185:
-#line	894	"/usr/seh/repos/alef2/port/parl.y"
+#line	894	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OIND, yypt[-0].yyv.node, nil);
 		} break;
 case 186:
-#line	898	"/usr/seh/repos/alef2/port/parl.y"
+#line	898	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OADDR, yypt[-0].yyv.node, nil);
 		} break;
 case 187:
-#line	902	"/usr/seh/repos/alef2/port/parl.y"
+#line	902	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OADD, yypt[-0].yyv.node, con(0));
 		} break;
 case 188:
-#line	906	"/usr/seh/repos/alef2/port/parl.y"
+#line	906	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OSUB, con(0), yypt[-0].yyv.node);
 		} break;
 case 189:
-#line	910	"/usr/seh/repos/alef2/port/parl.y"
+#line	910	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OEDEC, yypt[-0].yyv.node, nil);
 		} break;
 case 190:
-#line	914	"/usr/seh/repos/alef2/port/parl.y"
+#line	914	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OXEROX, yypt[-0].yyv.node, nil);
 		} break;
 case 191:
-#line	918	"/usr/seh/repos/alef2/port/parl.y"
+#line	918	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OEINC, yypt[-0].yyv.node, nil);
 		} break;
 case 192:
-#line	922	"/usr/seh/repos/alef2/port/parl.y"
+#line	922	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(ONOT, yypt[-0].yyv.node, nil);
 		} break;
 case 193:
-#line	926	"/usr/seh/repos/alef2/port/parl.y"
+#line	926	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OXOR, yypt[-0].yyv.node, con(-1));
 		} break;
 case 194:
-#line	930	"/usr/seh/repos/alef2/port/parl.y"
+#line	930	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OSTORAGE, yypt[-0].yyv.node, nil);
 		} break;
 case 195:
-#line	934	"/usr/seh/repos/alef2/port/parl.y"
+#line	934	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(ORECV, yypt[-0].yyv.node, nil);
 		} break;
 case 196:
-#line	938	"/usr/seh/repos/alef2/port/parl.y"
+#line	938	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OCRCV, yypt[-0].yyv.node, nil);
 		} break;
 case 197:
-#line	943	"/usr/seh/repos/alef2/port/parl.y"
+#line	943	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.node = nil; } break;
 case 200:
-#line	948	"/usr/seh/repos/alef2/port/parl.y"
+#line	948	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OILIST, yypt[-1].yyv.node, nil);
 			yyval.node->t = at(TAGGREGATE, 0);
 		} break;
 case 202:
-#line	956	"/usr/seh/repos/alef2/port/parl.y"
+#line	956	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OLIST, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 203:
-#line	961	"/usr/seh/repos/alef2/port/parl.y"
+#line	961	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = yypt[-1].yyv.node;
 			if(yypt[-1].yyv.node->type == OLIST) {
@@ -1812,29 +1812,29 @@ case 203:
 			}
 		} break;
 case 204:
-#line	969	"/usr/seh/repos/alef2/port/parl.y"
+#line	969	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OSTORAGE, nil, nil);
 			yyval.node->t = yypt[-1].yyv.type;
 		} break;
 case 205:
-#line	974	"/usr/seh/repos/alef2/port/parl.y"
+#line	974	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OCALL, yypt[-3].yyv.node, yypt[-1].yyv.node);
 		} break;
 case 206:
-#line	978	"/usr/seh/repos/alef2/port/parl.y"
+#line	978	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OIND, an(OADD, yypt[-3].yyv.node, yypt[-1].yyv.node), nil);
 		} break;
 case 207:
-#line	982	"/usr/seh/repos/alef2/port/parl.y"
+#line	982	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(ODOT, yypt[-2].yyv.node, nil);
 			yyval.node->sym = yypt[-0].yyv.sym;
 		} break;
 case 208:
-#line	987	"/usr/seh/repos/alef2/port/parl.y"
+#line	987	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OCONST, nil, nil);
 			yyval.node->t = at(TVOID, 0);
@@ -1847,169 +1847,169 @@ case 208:
 			yyval.node->sym = yypt[-0].yyv.sym;
 		} break;
 case 209:
-#line	999	"/usr/seh/repos/alef2/port/parl.y"
+#line	999	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(ODOT, an(OIND, yypt[-2].yyv.node, nil), nil);
 			yyval.node->sym = yypt[-0].yyv.sym;
 		} break;
 case 210:
-#line	1004	"/usr/seh/repos/alef2/port/parl.y"
+#line	1004	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OPDEC, yypt[-1].yyv.node, nil);
 		} break;
 case 211:
-#line	1008	"/usr/seh/repos/alef2/port/parl.y"
+#line	1008	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OPINC, yypt[-1].yyv.node, nil);
 		} break;
 case 212:
-#line	1012	"/usr/seh/repos/alef2/port/parl.y"
+#line	1012	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OCSND, yypt[-1].yyv.node, nil);
 		} break;
 case 213:
-#line	1016	"/usr/seh/repos/alef2/port/parl.y"
+#line	1016	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			derivetype(yypt[-0].yyv.node);
 		} break;
 case 214:
-#line	1020	"/usr/seh/repos/alef2/port/parl.y"
+#line	1020	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = vargptr();
 		} break;
 case 215:
-#line	1024	"/usr/seh/repos/alef2/port/parl.y"
+#line	1024	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = con(yypt[-0].yyv.ival);
 		} break;
 case 216:
-#line	1028	"/usr/seh/repos/alef2/port/parl.y"
+#line	1028	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = con(0);
 			yyval.node->t = at(TIND, builtype[TVOID]);
 		} break;
 case 217:
-#line	1033	"/usr/seh/repos/alef2/port/parl.y"
+#line	1033	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = con(yypt[-0].yyv.ival);
 		} break;
 case 218:
-#line	1037	"/usr/seh/repos/alef2/port/parl.y"
+#line	1037	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OCONST, nil, nil);
 			yyval.node->t = builtype[TFLOAT];
 			yyval.node->fval = yypt[-0].yyv.fval;
 		} break;
 case 219:
-#line	1043	"/usr/seh/repos/alef2/port/parl.y"
+#line	1043	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = strnode(yypt[-0].yyv.string, 0);
 		} break;
 case 220:
-#line	1047	"/usr/seh/repos/alef2/port/parl.y"
+#line	1047	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = strnode(yypt[-0].yyv.string, 1);
 		} break;
 case 222:
-#line	1054	"/usr/seh/repos/alef2/port/parl.y"
+#line	1054	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.sym = yypt[-0].yyv.ltype.s;
 		} break;
 case 223:
-#line	1060	"/usr/seh/repos/alef2/port/parl.y"
+#line	1060	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.node = nil; } break;
 case 226:
-#line	1066	"/usr/seh/repos/alef2/port/parl.y"
+#line	1066	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = an(OLIST, yypt[-2].yyv.node, yypt[-0].yyv.node);
 		} break;
 case 228:
-#line	1073	"/usr/seh/repos/alef2/port/parl.y"
+#line	1073	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yypt[-2].yyv.type->member = yypt[-0].yyv.type;
 			yyval.type = yypt[-2].yyv.type;
 		} break;
 case 229:
-#line	1080	"/usr/seh/repos/alef2/port/parl.y"
+#line	1080	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yypt[-0].yyv.type->class = yypt[-1].yyv.clas;
 			yyval.type = yypt[-0].yyv.type;
 		} break;
 case 230:
-#line	1085	"/usr/seh/repos/alef2/port/parl.y"
+#line	1085	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.type = unshape(yypt[-1].yyv.type);
 			yyval.type->class = yypt[-4].yyv.clas;
 		} break;
 case 231:
-#line	1090	"/usr/seh/repos/alef2/port/parl.y"
+#line	1090	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.type = unshape(yypt[-1].yyv.type);
 			yyval.type->class = yypt[-3].yyv.clas;
 		} break;
 case 233:
-#line	1098	"/usr/seh/repos/alef2/port/parl.y"
+#line	1098	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yypt[-2].yyv.type->variant = yypt[-0].yyv.type;
 			yyval.type = yypt[-2].yyv.type;
 		} break;
 case 234:
-#line	1104	"/usr/seh/repos/alef2/port/parl.y"
+#line	1104	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.type = at(TINT, 0); } break;
 case 235:
-#line	1105	"/usr/seh/repos/alef2/port/parl.y"
+#line	1105	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.type = at(TUINT, 0); } break;
 case 236:
-#line	1106	"/usr/seh/repos/alef2/port/parl.y"
+#line	1106	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.type = at(TSINT, 0); } break;
 case 237:
-#line	1107	"/usr/seh/repos/alef2/port/parl.y"
+#line	1107	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.type = at(TSUINT, 0); } break;
 case 238:
-#line	1108	"/usr/seh/repos/alef2/port/parl.y"
+#line	1108	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.type = at(TCHAR, 0); } break;
 case 239:
-#line	1109	"/usr/seh/repos/alef2/port/parl.y"
+#line	1109	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.type = at(TFLOAT, 0); } break;
 case 240:
-#line	1110	"/usr/seh/repos/alef2/port/parl.y"
+#line	1110	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.type = at(TVOID, 0); } break;
 case 241:
-#line	1112	"/usr/seh/repos/alef2/port/parl.y"
+#line	1112	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.type = yypt[-0].yyv.ltype.t; } break;
 case 242:
-#line	1114	"/usr/seh/repos/alef2/port/parl.y"
+#line	1114	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.type = polybuild(yypt[-3].yyv.ltype.t, yypt[-1].yyv.type); } break;
 case 243:
-#line	1116	"/usr/seh/repos/alef2/port/parl.y"
+#line	1116	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.type = at(TCHANNEL, yypt[-2].yyv.type);
 			if(yypt[-0].yyv.node != nil)
 				chani(yyval.type, yypt[-0].yyv.node);
 		} break;
 case 244:
-#line	1124	"/usr/seh/repos/alef2/port/parl.y"
+#line	1124	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.node = nil; } break;
 case 245:
-#line	1126	"/usr/seh/repos/alef2/port/parl.y"
+#line	1126	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.node = yypt[-1].yyv.node;
 		} break;
 case 246:
-#line	1132	"/usr/seh/repos/alef2/port/parl.y"
+#line	1132	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 {
 			yyval.clas = Global;
 			if(buildadt)
 				yyval.clas = Adtdeflt;
 		} break;
 case 247:
-#line	1137	"/usr/seh/repos/alef2/port/parl.y"
+#line	1137	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.clas = External; } break;
 case 248:
-#line	1138	"/usr/seh/repos/alef2/port/parl.y"
+#line	1138	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.clas = Internal; } break;
 case 249:
-#line	1139	"/usr/seh/repos/alef2/port/parl.y"
+#line	1139	"/usr/seh/repos/alef2/src/alef/port/parl.y"
 { yyval.clas = Private; } break;
 	}
 	goto yystack;  /* stack new state and value */
